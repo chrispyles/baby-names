@@ -1,0 +1,9 @@
+{
+    "path" : "~/GitHub/baby-names",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

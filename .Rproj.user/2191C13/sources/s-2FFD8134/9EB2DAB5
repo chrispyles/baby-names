@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1557815494028.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "9EB2DAB5",
+    "lastKnownWriteTime" : 1557816497,
+    "last_content_update" : 1557816497916,
+    "path" : "~/GitHub/baby-names/notebooks/index.Rmd",
+    "project_path" : "notebooks/index.Rmd",
+    "properties" : {
+        "cursorPosition" : "22,97",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

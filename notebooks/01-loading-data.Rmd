@@ -1,0 +1,59 @@
+---
+title: "Baby Names"
+output: html_document
+---
+
+<script type="text/javascript" src="../utils/menu.js"></script>
+
+### Loading Data
+
+```{r include=FALSE}
+knitr::opts_chunk$set(message=FALSE, warning=FALSE)
+```
+
+To begin loading the data, we first download the list of US states and their abbreviations from [jasonong on Github](https://github.com/jasonong/List-of-US-States).
+
+```{r setup, results = "hide"}
+library(tidyverse)
+download.file("https://raw.githubusercontent.com/jasonong/List-of-US-States/master/states.csv",
+              "../data/states.csv")
+states = read_csv("../data/states.csv")
+states
+```
+
+Now we define a function to load a tibble containing the name data for a specific state abbreviation, `load_state_data`.
+
+```{r load-data-fun}
+load_state_data = function (state) {
+  read_csv(
+    file.path("..", "data", paste0(state, ".txt")),
+    col_names = c("state", "sex", "year", "name", "occurances"),
+    col_types = cols(sex = col_character())
+  )
+}
+
+load_state_data("AL")
+```
+
+To quickly load all of the states, we implement `concatenate_tables` below which applies the `load_state_data` to each element in `states$Abbreviation`. It then binds all of the tibbles together using `bind_rows`.
+
+```{r concatenate}
+concatenate_tables = function () {
+  state_abbrevs = states$Abbreviation
+  tables = lapply(state_abbrevs, load_state_data)
+  bind_rows(tables)
+}
+
+concatenated = concatenate_tables()
+concatenated
+```
+
+For later use, we export the `concatenated` table as a CSV file.
+
+```{r export}
+write_csv(
+  concatenated,
+  file.path("..", "data", "all-states.csv")
+)
+```
+

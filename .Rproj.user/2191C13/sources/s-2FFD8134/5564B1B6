@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1557807290683.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5564B1B6",
+    "lastKnownWriteTime" : 1557816758,
+    "last_content_update" : 1557816758102,
+    "path" : "~/GitHub/baby-names/utils/export.R",
+    "project_path" : "utils/export.R",
+    "properties" : {
+        "cursorPosition" : "27,56",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

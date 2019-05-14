@@ -1,0 +1,23 @@
+---
+title: "Baby Names in the US"
+author: "Chris Pyles"
+output: html_document
+---
+
+<script type="text/javascript" src="../utils/index-menu.js"></script>
+
+### About
+
+This repository contains an analysis of baby name data in the US from 1910 to the present. At present, there isn't yet much (read: any) analysis done on the data beyond loading it into an easily usable form.
+
+### Data
+
+The data for this project comes from the [Social Security Administration](https://www.ssa.gov/OACT/babynames/limits.html) and is put together from the state-specific data zip archive. I also use a CSV file with state names and abbrevations from [jasonong on Github](https://github.com/jasonong/List-of-US-States).
+
+### Notebooks
+
+The notebooks in this repository are listed below with accompanying descriptions.
+
+| Notebook | Description |
+|-----|-----|
+| `01-loading-data.Rmd` | Downloading data, concatenating files from SSA into a single CSV file |

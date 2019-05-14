@@ -1,0 +1,8 @@
+"0","load_state_data = function (state) {"
+"0","  read_csv("
+"0","    file.path("".."", ""data"", paste0(state, "".txt"")),"
+"0","    col_names = c(""state"", ""sex"", ""year"", ""name"", ""occurances""),"
+"0","    col_types = cols(sex = col_character())"
+"0","  )"
+"0","}"
+"0","load_state_data(""AL"")"

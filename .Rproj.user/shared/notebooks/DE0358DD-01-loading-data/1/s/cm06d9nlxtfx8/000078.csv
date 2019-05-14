@@ -1,0 +1,8 @@
+"0","concatenate_tables = function () {"
+"0","  state_abbrevs = states$Abbreviation"
+"0","  tables = lapply(state_abbrevs, load_state_data)"
+"0","  bind_rows(tables)"
+"0","}"
+"0","concatenated = concatenate_tables()"
+"0","# print(""Num Observation"")"
+"0","concatenated"
