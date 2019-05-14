@@ -1,4 +1,0 @@
-var html = `
-	<strong>Notebooks:</strong> <a href="index.html">Home</a> | <a href="output/01-loading-data.html">Loading Data</a><br>
-`;
-document.write(html)
