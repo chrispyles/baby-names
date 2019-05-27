@@ -37,6 +37,12 @@ generate_anchor_link = function (nb) {
   pieces = tools::toTitleCase(pieces)
   title = paste(pieces, collapse=" ")
   
+  # detect if stirng "Eda" occurs
+  if (grepl("\b?Eda\b?", title)) {
+    # loc = regexpr("\bEda\b", title)
+    title = gsub("\b?Eda\b?", "EDA", title)
+  }
+  
   # add to html
   html = html %>% 
     paste0(title) %>% 
@@ -65,6 +71,12 @@ generate_anchor_link_index = function (nb) {
   pieces = pieces[-c(1, length(pieces))]
   pieces = tools::toTitleCase(pieces)
   title = paste(pieces, collapse=" ")
+  
+  # detect if stirng "Eda" occurs
+  if (grepl("\b?Eda\b?", title)) {
+    # loc = regexpr("\bEda\b", title)
+    title = gsub("\b?Eda\b?", "EDA", title)
+  }
   
   # add to html
   html = html %>% 

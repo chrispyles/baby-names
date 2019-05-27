@@ -1,0 +1,18 @@
+---
+title: "Baby Names"
+subtitle: "EDA"
+output: html_document
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(message=FALSE, warning=FALSE)
+```
+
+<script type="text/javascript" src="../utils/menu.js"></script>
+
+```{r setup}
+library("tidyverse")
+baby_names = read_csv("../data/all-states.csv")
+baby_names
+```
+
