@@ -11,8 +11,32 @@ knitr::opts_chunk$set(message=FALSE, warning=FALSE)
 <script type="text/javascript" src="../utils/menu.js"></script>
 
 ```{r setup}
-library("tidyverse")
-baby_names = read_csv("../data/all-states.csv")
-baby_names
+library(tidyverse)
+baby_names = read_csv("../data/all-states.csv",
+                      col_types = cols(sex = col_character()))
+```
+
+```{r}
+head(baby_names)
+```
+
+```{r}
+plot_name_over_time = function (name, smooth=FALSE) {
+  name_by_year = baby_names[baby_names$name == name,] %>%
+    group_by(year) %>%
+    summarize(occurances = sum(occurances))
+  plt = ggplot(data = name_by_year, aes(x = year, y = occurances)) +
+    ggtitle(paste0("Occurances of '", name, "' Over Time"))
+  if (smooth) {
+    plt = plt +
+      geom_smooth()
+  } else {
+    plt = plt +
+      geom_line()
+  }
+  plt
+}
+
+plot_name_over_time("Mary")
 ```
 
